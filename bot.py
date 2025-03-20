@@ -3,9 +3,9 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from flask import Flask, request
 import os
 
-TOKEN = os.getenv("7614534867:AAFW6fSU3iJ6F3RRzAb4SyybiirGlYUZsh4")  # استدعاء التوكن من متغيرات البيئة
+TOKEN = os.getenv("TOKEN")  # استدعاء التوكن من متغيرات البيئة
 CHANNEL_ID = -1002512738615  # معرف القناة لإرسال إثباتات الدفع
-bot = telebot.TeleBot(7614534867:AAFW6fSU3iJ6F3RRzAb4SyybiirGlYUZsh4)
+bot = telebot.TeleBot(TOKEN)
 
 # إعداد Flask
 app = Flask(__name__)
@@ -80,7 +80,7 @@ def add_points(message):
     bot.send_message(user_id, f"🎁 تمت إضافة 10 نقاط! رصيدك الحالي: {users_data[user_id]['points']}")
 
 # نقطة الدخول لـ Webhook
-@app.route(f"/{7614534867:AAFW6fSU3iJ6F3RRzAb4SyybiirGlYUZsh4}", methods=["POST"])
+@app.route(f"/{TOKEN}", methods=["POST"])
 def webhook():
     json_str = request.get_data().decode("UTF-8")
     update = telebot.types.Update.de_json(json_str)
