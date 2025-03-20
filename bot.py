@@ -3,7 +3,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from flask import Flask, request
 import os
 
-TOKEN = os.getenv("TOKEN")  # استدعاء التوكن من متغيرات البيئة
+TOKEN = os.getenv("7614534867:AAFW6fSU3iJ6F3RRzAb4SyybiirGlYUZsh4")  # استدعاء التوكن من متغيرات البيئة
 CHANNEL_ID = -1002512738615  # معرف القناة لإرسال إثباتات الدفع
 bot = telebot.TeleBot(TOKEN)
 
